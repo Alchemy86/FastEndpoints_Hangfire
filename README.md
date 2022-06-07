@@ -11,3 +11,6 @@ Swagger: http//localhost:5006/swagger
 - All jobs unpaused at once when submitted
 
 Tests the execution of hangfire jobs if fires by hangfire but paused within the method itself. Works fine.
+
+## Results
+Works as expected. So long as jobs are configured to follow the completion of another by ID, even if teh code within the job has a delay and goes beyond the start time of the next job, it WILL NOT trigger until the previous job is done.
